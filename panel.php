@@ -1,0 +1,4 @@
+<?php
+require __DIR__.'/config.php'; require_login();
+$tables=['productos'=>'Productos','clientes_credito'=>'Clientes a crédito','ventas'=>'Ventas','movimientos_credito'=>'Movimientos de crédito'];
+?><!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Panel - Super Gus</title><link rel="stylesheet" href="style.css"><header><b>Super Gus / Administración</b><a href="logout.php">Cerrar sesión</a></header><main><h1>Panel CRUD</h1><p>Selecciona una tabla para consultar, agregar, editar o eliminar registros.</p><section class="cards"><?php foreach($tables as $t=>$label):?><a class="card" href="crud.php?tabla=<?=h($t)?>"><h2><?=h($label)?></h2><span>Administrar registros →</span></a><?php endforeach;?></section></main></html>
